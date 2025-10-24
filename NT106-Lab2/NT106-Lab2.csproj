@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +37,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +58,43 @@
     <Compile Include="bai1.Designer.cs">
       <DependentUpon>bai1.cs</DependentUpon>
     </Compile>
+    <Compile Include="bai2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai2.Designer.cs">
+      <DependentUpon>bai2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bai3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai3.Designer.cs">
+      <DependentUpon>bai3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bai4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai4.Designer.cs">
+      <DependentUpon>bai4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bai5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai5.Designer.cs">
+      <DependentUpon>bai5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bai6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai6.Designer.cs">
+      <DependentUpon>bai6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bai7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bai7.Designer.cs">
+      <DependentUpon>bai7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="menuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +105,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="bai1.resx">
       <DependentUpon>bai1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai2.resx">
+      <DependentUpon>bai2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai3.resx">
+      <DependentUpon>bai3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai4.resx">
+      <DependentUpon>bai4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai5.resx">
+      <DependentUpon>bai5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai6.resx">
+      <DependentUpon>bai6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bai7.resx">
+      <DependentUpon>bai7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuForm.resx">
       <DependentUpon>menuForm.cs</DependentUpon>
@@ -75,6 +136,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,4 +151,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
 </Project>
